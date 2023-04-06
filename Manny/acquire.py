@@ -1,6 +1,19 @@
 import pandas as pd  
 from selenium import webdriver
 import json
+import csv
+
+def save_links_to_csv(links, filename):
+    with open(filename, 'w', newline='') as file:
+        writer = csv.writer(file)
+        for link in links:
+            writer.writerow([link])
+
+def load_links_from_csv(filename):
+    with open(filename, 'r', newline='') as file:
+        reader = csv.reader(file)
+        links = [row[0] for row in reader]
+    return links
 
 def save_to_json(data, file_name):
     with open(file_name, 'w') as file:
@@ -90,3 +103,30 @@ def get_all_season_robot_links():
 
     return all_season_robot_links
 
+def get_all_wiki_robot_links():
+    # link for wiki
+    link = "https://battlebots.fandom.com/wiki/Category:Competitor_list_templates"
+    
+    # start scraper with link
+    driver = webdriver.Chrome()
+    
+    # go to link
+    driver.get(link)
+    
+    # isolate alphabet letter element
+    member_elements = driver.find_elements_by_class_name("category-page__members-wrapper")
+
+    # temporary list
+    links = []
+    
+    # iterate through all the alplhabet class member and extract `css` element which has link
+    for member_element in member_elements:
+        a_elements = member_element.find_elements_by_css_selector(".category-page__member-link")
+        
+        # get the link in every alphabet `css` element link
+        for a_element in a_elements:
+            
+            # append to the empty list
+            links.append(a_element.get_attribute("href"))
+            
+    return links
