@@ -70,7 +70,7 @@ A data-driven project that focuses on unlocking Battlebot Tournament predictions
 | losses | number of losses |
 | ko | number of knockouts |
 | ko_percentage | percentage of knockouts for matches |
-| avg_ko_time | average knockout time for all ma  |
+| avg_ko_time | average time taken to knock an opponent out  |
 | ko_against | opponent that got knockedout  |
 | ko_against_percentage | percentage of knockout wins |
 | decision_wins | number of wins by judges' decision |
