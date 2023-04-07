@@ -1,8 +1,3 @@
-<img
-  src="battlebot_flipped_fire.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; max-width: 200px">
 
 # Battle Bots, Roll Out!
 <a href="#"><img alt="Python" src="https://img.shields.io/badge/Python-013243.svg?logo=python&logoColor=blue"></a>
