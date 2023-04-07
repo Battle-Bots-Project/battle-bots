@@ -28,7 +28,7 @@ A data-driven project that focuses on unlocking Battlebot Tournament predictions
   * The data is from www.battlebots.com.
 
 * **Prepare data for exploration:**
-    * Schools that had special characters were removed from analysis
+    * Observations that had special characters were removed from analysis
         - special characters (`%`, `-`)
         
     * Initial rows per season:
