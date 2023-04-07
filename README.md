@@ -27,7 +27,7 @@ A data-driven project that focuses on unlocking Battlebot Tournament predictions
   * Web scraping was used to acquire the data
   * The data is from www.battlebots.com.
 
-* **Data prep for exploration:**
+* **Prepare data for exploration:**
     * Schools that had special characters were removed from analysis
         - special characters (`%`, `-`)
         
@@ -38,13 +38,13 @@ A data-driven project that focuses on unlocking Battlebot Tournament predictions
         - Season 2019:
         
         
-* **Separate into train, validate, and test datasets**
+* **Separate into `train`, `validate`, and `test` datasets**
  
 * **Explore data to develop an understanding of what features affect a robot's chances at winning.**
    * Initial questions:
        
        
-* **Prep the data for modeling:**
+* **Prepare the data for modeling:**
     
       
 * **Develop a model to predict if a robot will win or lose.
