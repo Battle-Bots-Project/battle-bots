@@ -5,7 +5,20 @@
   style="display: inline-block; margin: 0 auto; max-width: 200px">
 
 # Battle Bots, Roll Out!
+<a href="#"><img alt="Python" src="https://img.shields.io/badge/Python-013243.svg?logo=python&logoColor=blue"></a>
+<a href="#"><img alt="Pandas" src="https://img.shields.io/badge/Pandas-150458.svg?logo=pandas&logoColor=white"></a>
+<a href="#"><img alt="NumPy" src="https://img.shields.io/badge/Numpy-2a4d69.svg?logo=numpy&logoColor=grey"></a>
+<a href="#"><img alt="Matplotlib" src="https://img.shields.io/badge/Matplotlib-8DF9C1.svg?logo=matplotlib&logoColor=blue"></a>
+<a href="#"><img alt="seaborn" src="https://img.shields.io/badge/seaborn-65A9A8.svg?logo=pandas&logoColor=white"></a>
+<a href="#"><img alt="sklearn" src="https://img.shields.io/badge/sklearn-4b86b4.svg?logo=scikitlearn&logoColor=grey"></a>
+<a href="#"><img alt="SciPy" src="https://img.shields.io/badge/SciPy-1560bd.svg?logo=scipy&logoColor=blue"></a>
 
+<img
+  src="battlebot_flipped_fire.png"
+  alt="Alt text"
+  title="Optional title"
+  style="display: inline-block; margin: 0 auto; max-width: 200px">
+  
 ## Project Description:
 A data-driven project that focuses on unlocking Battlebot Tournament predictions through the power of Machine Learning and data analysis. By evaluating their match performance, we craft an accurate model to anticipate competition outcomes. With the prediction model, we look to enrich fans' experiences by empowering them to foresee tournament winners. 
 
