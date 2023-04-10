@@ -1,6 +1,7 @@
 import os
 import csv
 import pandas as pd
+from acquire import *
 import re
 
 def load_links_from_csv(filename):
@@ -239,57 +240,6 @@ def create_long_format_stats_df(robot_dict):
     
     # Return the final DataFrame in long format
     return final_df
-
-def create_long_format_matchup_history_df(robot_dict):
-    """
-    Takes a dictionary of robot information, and returns a Pandas DataFrame containing
-    the match history for all robots in long format.
-    
-    Parameters:
-    robot_dict (dict): A dictionary where the keys are robot names and the values
-        are dictionaries containing information about the robot.
-    
-    Returns:
-    all_match_history_df_melt (Pandas DataFrame): A formatted Pandas DataFrame in long format,
-        containing the match history for all robots in the input dictionary.
-    """
-    # Create an empty list to store the formatted match history dataframes
-    match_history_dfs = []
-    
-    # Loop through each robot in the robot_dict dictionary
-    for robot_name, tables_dict in robot_dict.items():
-        # Check if the 'match_history' key exists in the tables_dict
-        if 'match_history' in tables_dict:
-            # Extract the match_history dataframe for this robot
-            match_history_df = tables_dict['match_history']
-            # Add a RobotName column with the robot's name
-            match_history_df['RobotName'] = robot_name
-            # Rename the columns in match_history_df
-            match_history_df.columns = [col + '_match_history' if col not in ['Season', 'RobotName'] else col for col in match_history_df.columns]
-            
-            # Append the formatted dataframe to the list
-            match_history_dfs.append(match_history_df)
-            
-    # Concatenate all the formatted match history dataframes into a single dataframe
-    all_match_history_df = pd.concat(match_history_dfs)
-
-    # Remove double "_matchup_history" suffix
-    all_match_history_df.columns = all_match_history_df.columns.str.replace('_match_history_match_history', '_match_history')
-
-    # Melt the all_match_history_df table
-    all_match_history_df_melt = pd.melt(
-        all_match_history_df,
-        id_vars=['Season', 'RobotName'],
-        value_vars=['Round_match_history', 'Matchup_match_history', 'Results_match_history', 'Opponent_match_history'],
-        var_name='Stats',
-        value_name='Value'
-    )
-    all_match_history_df_melt = all_match_history_df_melt.rename(columns={'Season': 'Year'})
-
-    # Fix null concatenation issues
-    all_match_history_df_melt.dropna(subset=['Year', 'Value'], inplace=True)
-
-    return all_match_history_df_melt
 
 def get_all_wiki_robot_links():
     """
