@@ -1,7 +1,6 @@
 import os
 import csv
 import pandas as pd
-from acquire import *
 import re
 
 def load_links_from_csv(filename):
