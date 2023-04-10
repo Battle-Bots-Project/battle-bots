@@ -8,6 +8,10 @@
 <a href="#"><img alt="sklearn" src="https://img.shields.io/badge/sklearn-4b86b4.svg?logo=scikitlearn&logoColor=grey"></a>
 <a href="#"><img alt="SciPy" src="https://img.shields.io/badge/SciPy-1560bd.svg?logo=scipy&logoColor=blue"></a>
 
+
+<img src="https://img.shields.io/badge/SciPy-1560bd.svg?logo=scipy&logoColor=blue" alt="python" width="120" hight="50">
+
+
 <img
   src="battlebot_flipped_fire.png"
   alt="Alt text"
