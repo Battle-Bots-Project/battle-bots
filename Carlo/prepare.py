@@ -24,4 +24,67 @@ def split_data(df, target= 'enter target column here'):
     train, validate = train_test_split(train, train_size = 0.7, random_state = 123, stratify=train[target])
     return train, validate, test
 
+#---------------------------------------------------------------------------------------------------------
 
+def convert_percent_cols(df):
+    
+    # Remove '%' and convert to Float
+    df.win_percentage = df.win_percentage.str.replace('%','').astype(float)
+    df.ko_percentage = df.ko_percentage.str.replace('%','').astype(float)
+    df.ko_against_percentage = df.ko_against_percentage.str.replace('%','').astype(float)
+    
+    # Lists to hold numbers
+    win_percentage_list = []
+    ko_percentage_list = []
+    ko_against_percentage_list = []
+    
+    # Loop for win percentage
+    for number in df.win_percentage:
+        
+        # Multiply to turn into decimal
+        new = number * 0.01
+        
+        # Append lis
+        win_percentage_list.append(new)
+    
+    # Loop for KO percentage
+    for number in df.ko_percentage:
+        
+        # Multiply to turn into decimal
+        new = number * 0.01
+        
+        # Append lis
+        ko_percentage_list.append(new)
+    
+    # Loop for KO against percentage
+    for number in df.ko_against_percentage:
+        
+        # Multiply to turn into decimal
+        new = number * 0.01
+        
+        # Append lis
+        ko_against_percentage_list.append(new)
+        
+    df['win_percentage'] = win_percentage_list
+    df['ko_percentage'] = ko_percentage_list
+    df['ko_against_percentage'] = ko_against_percentage_list
+    
+    return df
+
+
+#---------------------------------------------------------------------------------------------------------
+
+def convert_sec_col(df):
+    
+
+    # Remove 's' 
+    df.avg_ko_time = df.avg_ko_time.str.replace('s','')
+    
+    # Replace NaN with '0'
+    df.avg_ko_time = df.avg_ko_time.fillna(0)
+    
+    df.avg_ko_time = df.avg_ko_time.astype(float)
+    
+    return df
+
+#---------------------------------------------------------------------------------------------------------
